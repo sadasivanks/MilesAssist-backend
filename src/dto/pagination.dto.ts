@@ -1,0 +1,3 @@
+import { Type } from 'class-transformer'; import { IsDateString, IsEnum, IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
+export enum SortOrder { ASC = 'ASC', DESC = 'DESC' }
+export class PaginationDto { @IsOptional() @Type(() => Number) @IsInt() @Min(1) page = 1; @IsOptional() @Type(() => Number) @IsInt() @Min(1) @Max(100) limit = 20; @IsOptional() @IsString() search?: string; @IsOptional() @IsDateString() dateFrom?: string; @IsOptional() @IsDateString() dateTo?: string; @IsOptional() @IsString() sortBy?: string; @IsOptional() @IsEnum(SortOrder) sortOrder: SortOrder = SortOrder.DESC; }

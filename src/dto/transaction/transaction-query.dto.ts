@@ -1,0 +1,2 @@
+import { Type } from 'class-transformer'; import { IsEnum, IsNumberString, IsOptional } from 'class-validator'; import { PaginationDto } from '../pagination.dto'; import { TransactionStatus, TransactionType } from '../../entity/transaction.entity';
+export class TransactionQueryDto extends PaginationDto { @IsOptional() @IsEnum(TransactionStatus) status?: TransactionStatus; @IsOptional() @IsEnum(TransactionType) type?: TransactionType; @IsOptional() @IsNumberString() amountMin?: string; @IsOptional() @IsNumberString() amountMax?: string; }

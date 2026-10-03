@@ -1,0 +1,1 @@
+import { IsEnum, IsOptional } from 'class-validator'; import { PaginationDto } from '../pagination.dto'; import { UserStatus } from '../../entity/user.entity'; export class UserQueryDto extends PaginationDto { @IsOptional() @IsEnum(UserStatus) status?: UserStatus; }

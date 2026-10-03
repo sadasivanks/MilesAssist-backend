@@ -1,0 +1,1 @@
+import { IsEnum, IsOptional, IsString } from 'class-validator'; import { PaginationDto } from '../pagination.dto'; import { BookingStatus } from '../../entity/booking.entity'; export class BookingQueryDto extends PaginationDto { @IsOptional() @IsEnum(BookingStatus) status?: BookingStatus; @IsOptional() @IsString() service?: string; }

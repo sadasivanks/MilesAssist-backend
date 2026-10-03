@@ -1,0 +1,20 @@
+digraph G {
+  rankdir=LR;
+  node [shape=record];
+  
+  
+  admins [label="{admins|id PK : integer|name|email UNIQUE|password_hash|status|role|created_at|updated_at}"];
+ 
+  users [label="{users|id PK : integer|name|email UNIQUE|phone|role|status|last_active_at|created_at|updated_at|deleted_at}"];
+  
+  
+  transactions [label="{transactions|id PK : integer|transaction_id UNIQUE|user_id FK|type|amount numeric(14,2)|status|transaction_date|created_at|updated_at}"];
+  
+  bookings [label="{bookings|id PK : integer|booking_id UNIQUE|user_id FK|service|service_date|duration|status|amount numeric(14,2)|created_at|updated_at}"];
+ 
+ 
+  alerts [label="{dashboard_alerts|id PK : integer|title|action|status|created_at}"];
+ 
+  users -> transactions [label="1:N"];
+  users -> bookings [label="1:N"];
+}

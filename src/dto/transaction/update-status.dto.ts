@@ -1,0 +1,1 @@
+import { IsEnum } from 'class-validator'; import { TransactionStatus } from '../../entity/transaction.entity'; export class UpdateTransactionStatusDto { @IsEnum(TransactionStatus) status!: TransactionStatus; }

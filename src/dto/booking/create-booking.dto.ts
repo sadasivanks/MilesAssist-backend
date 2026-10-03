@@ -1,0 +1,2 @@
+import { IsDateString, IsEnum, IsInt, IsNumberString, IsOptional, IsString, MaxLength, Min } from 'class-validator'; import { BookingStatus } from '../../entity/booking.entity';
+export class CreateBookingDto { @IsInt() @Min(1) userId!: number; @IsString() @MaxLength(150) service!: string; @IsDateString() serviceDate!: string; @IsInt() @Min(1) duration!: number; @IsOptional() @IsEnum(BookingStatus) status?: BookingStatus; @IsNumberString() amount!: string; }
